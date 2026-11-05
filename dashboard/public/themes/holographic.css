@@ -1,0 +1,298 @@
+/* Holographic Theme - Fixed for Main Dashboard DOM */
+:root {
+    --glass: rgba(10, 20, 30, 0.85);
+    --border: rgba(0, 243, 255, 0.4);
+    --neon: #00f3ff;
+    --text: #e0faff;
+    --font-main: 'Rajdhani', sans-serif;
+
+    /* Moiz Dashboard Mappings */
+    --primary-neon: var(--neon);
+    --secondary-neon: #ffffff;
+    --text-color: var(--text);
+    --bg-color: transparent;
+    --alert-color: #ff0055;
+    --panel-bg: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent for hologram feel */
+}
+
+body {
+    background-color: #000;
+    background-image: radial-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    font-family: var(--font-main);
+    color: var(--text);
+    text-shadow: none;
+}
+
+/* Center the HUD like the demo window */
+.hud-container {
+    display: flex !important;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    width: auto;
+    height: auto;
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.15);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 98% 100%, 0 100%);
+    padding: 0;
+    gap: 0;
+}
+
+/* Neon Top Bar for the main window */
+.hud-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon);
+    box-shadow: 0 0 10px var(--neon);
+    z-index: 10;
+}
+
+.sidebar {
+    width: 250px;
+    border-right: 1px solid rgba(0, 243, 255, 0.2);
+    background: transparent;
+    padding: 20px;
+    box-shadow: none;
+}
+
+.main-interface {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background: transparent;
+}
+
+/* Reset inner panels to be transparent parts of the hologram */
+.panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.panel-header {
+    color: var(--neon);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    background: transparent;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.top-bar {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.brand h1 {
+    color: var(--neon);
+    text-shadow: 0 0 10px var(--neon);
+}
+
+/* Buttons */
+.cyber-btn {
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--neon);
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    transition: 0.2s;
+    text-shadow: 0 0 5px var(--neon);
+}
+
+.cyber-btn:hover {
+    background: var(--neon);
+    color: black;
+    box-shadow: 0 0 20px var(--neon);
+}
+
+.scanlines {
+    opacity: 0.05;
+}
+
+.overlay {
+    display: none;
+}
+
+input,
+select {
+    background: rgba(0, 20, 30, 0.9);
+    border: 1px solid var(--border);
+    color: var(--neon);
+    font-family: var(--font-main);
+    padding: 8px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--neon);
+}
+
+/* Functional Layouts */
+.bot-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.bot-item {
+    padding: 10px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.2s;
+    background: rgba(0, 243, 255, 0.02);
+}
+
+.bot-item:hover {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--neon);
+    padding-left: 15px;
+}
+
+.bot-item.selected {
+    background: rgba(0, 243, 255, 0.15);
+    border-left-color: var(--neon);
+    color: var(--neon);
+    text-shadow: 0 0 5px var(--neon);
+}
+
+.bot-item span {
+    margin-left: 10px;
+}
+
+/* Tabs */
+.command-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    flex-grow: 1;
+    font-family: var(--font-main);
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    margin: 0 2px;
+}
+
+.tab-btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    color: white;
+}
+
+.tab-btn.active {
+    background: var(--neon);
+    color: black;
+    font-weight: bold;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Structure */
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.input-row label {
+    font-size: 0.8rem;
+    color: rgba(0, 243, 255, 0.7);
+    min-width: 60px;
+}
+
+.control-section {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    padding: 10px;
+    background: rgba(0, 243, 255, 0.02);
+}
+
+.control-section h3 {
+    margin-top: 0;
+    color: var(--neon);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.d-pad-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.d-pad-grid .row {
+    display: flex;
+    gap: 5px;
+}
+
+.action-jump {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.coord-box {
+    width: 60px;
+    text-align: center;
+}
+
+.chat-input-row {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.prompt {
+    color: var(--neon);
+    margin-right: 5px;
+}
+
+.chat-terminal {
+    background: rgba(0, 10, 20, 0.8);
+    border: 1px solid var(--border);
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.chat-message .username {
+    color: var(--neon);
+    text-shadow: 0 0 5px var(--neon);
+}
+
+.cyber-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--neon);
+    margin-bottom: 10px;
+}

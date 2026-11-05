@@ -1,0 +1,19 @@
+:root {
+    --bg-dark: #000000;
+    --bg-panel: rgba(0, 20, 0, 0.8);
+    --primary-cyan: #00FF00;
+    /* Green */
+    --primary-magenta: #008000;
+    --accent-gold: #32CD32;
+    --accent-red: #FF0000;
+    --accent-green: #00FF00;
+    --text-main: #00FF00;
+    --text-dim: #006400;
+    --neon-glow: 0 0 8px rgba(0, 255, 0, 0.4);
+    --border-light: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+body {
+    background-image: linear-gradient(0deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}

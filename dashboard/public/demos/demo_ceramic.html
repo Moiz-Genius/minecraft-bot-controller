@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo: Ceramic Frost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f2f4f6;
+            font-family: 'Outfit', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .app-window {
+            width: 1000px;
+            height: 700px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px) saturate(180%);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            display: flex;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: rgba(240, 242, 245, 0.4);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-dot {
+            width: 12px;
+            height: 12px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .menu-item {
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: #6e6e73;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .menu-item:hover {
+            background: rgba(0, 0, 0, 0.03);
+            color: #1a1a1a;
+        }
+
+        .menu-item.active {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            font-weight: 600;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: 0.3s;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            background: #e6f6e6;
+            color: #0f6c0f;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .progress-track {
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1a1a1a;
+            border-radius: 4px;
+            width: 75%;
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .floating-action:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-window">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-dot"></div> Nexus
+            </div>
+            <div class="menu-item active">Dashboard</div>
+            <div class="menu-item">Bot Fleet</div>
+            <div class="menu-item">Analytics</div>
+            <div class="menu-item">Confguration</div>
+        </aside>
+
+        <main class="content">
+            <h1>Active Fleet</h1>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <span style="font-weight: 600; font-size: 1.1rem;">Bot_Alpha</span>
+                    <span class="status-pill">Operational</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 88%"></div>
+                </div>
+                <div style="margin-top:10px; font-size:0.9rem; color:#888;">Health Integrity</div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <span style="font-weight: 600; font-size: 1.1rem;">Bot_Beta</span>
+                    <span class="status-pill" style="background:#fff0e6; color:#b34700">Warning</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 45%; background: #ff9500"></div>
+                </div>
+                <div style="margin-top:10px; font-size:0.9rem; color:#888;">Health Integrity</div>
+            </div>
+
+        </main>
+    </div>
+    <div class="floating-action">+</div>
+</body>
+
+</html>

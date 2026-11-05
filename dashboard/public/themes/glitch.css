@@ -1,0 +1,18 @@
+:root {
+    --bg-dark: #121212;
+    --bg-panel: rgba(255, 255, 255, 0.1);
+    --primary-cyan: #FFFFFF;
+    --primary-magenta: #FF0000;
+    /* Glitch Accent */
+    --accent-gold: #00FF00;
+    --accent-red: #FF0000;
+    --accent-green: #00FF00;
+    --text-main: #FFFFFF;
+    --text-dim: #AAAAAA;
+    --neon-glow: 2px 0 #ff0000, -2px 0 #00ffff;
+    --border-light: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+body {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="black"/><path d="M0 0 L100 100 M100 0 L0 100" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+}

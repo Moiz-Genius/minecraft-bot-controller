@@ -1,0 +1,21 @@
+:root {
+    --bg-dark: #000000;
+    --bg-panel: rgba(10, 0, 20, 0.9);
+    --primary-cyan: #9370DB;
+    /* MediumPurple */
+    --primary-magenta: #4B0082;
+    /* Indigo */
+    --accent-gold: #D8BFD8;
+    --accent-red: #8B0000;
+    --accent-green: #00FA9A;
+    --text-main: #E6E6FA;
+    --text-dim: #6A5ACD;
+    --neon-glow: 0 0 15px rgba(75, 0, 130, 0.8);
+    --border-light: 1px solid rgba(147, 112, 219, 0.3);
+}
+
+body {
+    background-color: #030005;
+    background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 3px);
+    background-size: 550px 550px;
+}

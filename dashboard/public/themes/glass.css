@@ -1,0 +1,324 @@
+/* Glass OS Theme - Fixed for Main Dashboard DOM */
+:root {
+    --glass: rgba(255, 255, 255, 0.65);
+    --border: rgba(255, 255, 255, 0.4);
+    --text: #000000;
+    --primary: #3b82f6;
+
+    /* Mappings for Moiz Dashboard compatibility */
+    --primary-neon: var(--primary);
+    --secondary-neon: #60a5fa;
+    --text-color: var(--text);
+    --bg-color: transparent;
+    --alert-color: #ef4444;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    text-shadow: none;
+}
+
+/* Transform the main container into a "Window" */
+.hud-container {
+    display: flex !important;
+    /* Override grid */
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 15%;
+    right: 15%;
+    width: auto;
+    height: auto;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+}
+
+/* Sidebar becomes the left pane */
+.sidebar {
+    width: 220px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.panel-header {
+    background: transparent;
+    color: #333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-shadow: none;
+    font-size: 0.9rem;
+}
+
+/* Main interface becomes the right content pane */
+.main-interface {
+    flex-grow: 1;
+    background: transparent;
+    padding: 30px;
+    overflow-y: auto;
+    display: block;
+    /* Override default if any */
+}
+
+/* Hide or restyle panels inside main interface to look seamless */
+.main-interface .panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.top-bar {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.brand h1 {
+    color: #333;
+    text-shadow: none;
+}
+
+/* Buttons */
+.cyber-btn {
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-shadow: none;
+    font-weight: 600;
+}
+
+.cyber-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.cyber-btn.danger {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+/* Hide scanlines */
+.scanlines,
+.overlay,
+.particles {
+    display: none !important;
+}
+
+/* Status */
+.status-module {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #333;
+    text-shadow: none;
+}
+
+.status-module.online {
+    color: #059669;
+}
+
+.status-module.offline {
+    color: #dc2626;
+}
+
+/* Inputs */
+input,
+select {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Functional Layouts (Ported from style.css) */
+.bot-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.bot-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+    color: #555;
+}
+
+.bot-item:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+
+.bot-item.selected {
+    background: white;
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bot-item span {
+    margin-left: 10px;
+}
+
+/* Tabs */
+.command-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tab-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 700;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Inputs and controls */
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.input-row label {
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 60px;
+}
+
+.control-section {
+    margin-bottom: 20px;
+}
+
+.control-section h3 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.d-pad-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.d-pad-grid .row {
+    display: flex;
+    gap: 5px;
+}
+
+.action-jump {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.coord-box {
+    width: 60px;
+    text-align: center;
+}
+
+.chat-input-row {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.prompt {
+    display: none;
+}
+
+.chat-terminal {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.chat-message .username {
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.cyber-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.cyber-checkbox input {
+    margin: 0;
+}

@@ -1,0 +1,20 @@
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-panel: rgba(40, 40, 40, 0.8);
+    --primary-cyan: #95A5A6;
+    /* Grey */
+    --primary-magenta: #2C3E50;
+    /* Dark Blue */
+    --accent-gold: #BDC3C7;
+    --accent-red: #E74C3C;
+    --accent-green: #2ECC71;
+    --text-main: #ECF0F1;
+    --text-dim: #7F8C8D;
+    --neon-glow: 0 0 5px rgba(255, 255, 255, 0.2);
+    --border-light: 1px solid rgba(127, 140, 141, 0.3);
+}
+
+body {
+    background-image: none;
+    background-color: #222;
+}

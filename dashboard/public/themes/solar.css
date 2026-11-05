@@ -1,0 +1,20 @@
+:root {
+    --bg-dark: #1a1000;
+    --bg-panel: rgba(50, 30, 0, 0.8);
+    --primary-cyan: #FFA500;
+    /* Orange */
+    --primary-magenta: #FF4500;
+    /* OrangeRed */
+    --accent-gold: #FFFF00;
+    /* Yellow */
+    --accent-red: #FF0000;
+    --accent-green: #ADFF2F;
+    --text-main: #FFFACD;
+    --text-dim: #DAA520;
+    --neon-glow: 0 0 12px rgba(255, 165, 0, 0.7);
+    --border-light: 1px solid rgba(255, 165, 0, 0.4);
+}
+
+body {
+    background-image: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(255, 69, 0, 0.05) 100%);
+}

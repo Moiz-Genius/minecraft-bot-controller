@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo: Acrylic Dark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .glass-panel {
+            width: 90%;
+            height: 85%;
+            background: rgba(32, 32, 32, 0.6);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .nav-pane {
+            width: 250px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .list-item {
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 2px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .list-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .list-item.selected {
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .list-item.selected::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+            background: #60cdff;
+            border-radius: 2px;
+        }
+
+        .main-col {
+            flex-grow: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .header-large {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .card-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #60cdff;
+            color: #000;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #8ad8ff;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-panel">
+        <nav class="nav-pane">
+            <div class="nav-header">Command Center</div>
+            <div class="list-item selected"><span>🏠</span> Overview</div>
+            <div class="list-item"><span>👥</span> Bots</div>
+            <div class="list-item"><span>🚀</span> Deploy</div>
+            <div class="list-item"><span>⚙️</span> Settings</div>
+        </nav>
+        <main class="main-col">
+            <div class="header-large">Overview</div>
+            <div class="subtitle">System Status: All Systems Operational</div>
+
+            <div class="card-row">
+                <div class="stat-card">
+                    <div class="stat-label">Total Units</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Tasks</div>
+                    <div class="stat-value">12</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Network Load</div>
+                    <div class="stat-value">24%</div>
+                </div>
+            </div>
+
+            <button class="btn-primary">Execute Protocol</button>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+:root {
+    --bg-dark: #0a0500;
+    --bg-panel: rgba(30, 20, 5, 0.7);
+    --primary-cyan: #FFD700; /* Gold */
+    --primary-magenta: #800080; /* Purple */
+    --accent-gold: #DAA520;
+    --accent-red: #CD5C5C;
+    --accent-green: #32CD32;
+    --text-main: #FFF8DC;
+    --text-dim: #D2B48C;
+    --neon-glow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(128, 0, 128, 0.3);
+    --border-light: 1px solid rgba(255, 215, 0, 0.2);
+}
+body { background-image: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 40%); }

@@ -1,0 +1,19 @@
+:root {
+    --bg-dark: #00001a;
+    --bg-panel: rgba(0, 0, 40, 0.7);
+    --primary-cyan: #00BFFF;
+    /* DeepSkyBlue */
+    --primary-magenta: #1E90FF;
+    /* DodgerBlue */
+    --accent-gold: #E0FFFF;
+    --accent-red: #FF6347;
+    --accent-green: #00FF7F;
+    --text-main: #F0F8FF;
+    --text-dim: #4682B4;
+    --neon-glow: 0 0 15px rgba(0, 191, 255, 0.5);
+    --border-light: 1px solid rgba(0, 191, 255, 0.3);
+}
+
+body {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 191, 255, 0.05) 10px, rgba(0, 191, 255, 0.05) 20px);
+}

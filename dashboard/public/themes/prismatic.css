@@ -1,0 +1,308 @@
+/* Prismatic Theme - Fixed for Main Dashboard DOM */
+:root {
+    --bg-color: #050510;
+    --panel-bg: rgba(10, 10, 20, 0.9);
+    --text-color: #fff;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Floating RGB Card */
+.hud-container {
+    display: flex !important;
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    width: auto;
+    height: auto;
+    background: var(--panel-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 0;
+    gap: 0;
+    z-index: 1;
+}
+
+/* RGB Border Animation around the whole container */
+.hud-container::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    z-index: -1;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    animation: glowing 20s linear infinite;
+    border-radius: 24px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.sidebar {
+    width: 250px;
+    background: transparent;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    box-shadow: none;
+}
+
+.main-interface {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background: transparent;
+}
+
+.panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+.panel-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to right, #00ffd5, #7a00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.top-bar {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.brand h1 {
+    font-weight: 900;
+    -webkit-text-fill-color: white;
+}
+
+.cyber-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cyber-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.scanlines,
+.overlay {
+    display: none;
+}
+
+input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+}
+
+input:focus {
+    border-color: #7a00ff;
+    box-shadow: 0 0 15px rgba(122, 0, 255, 0.5);
+}
+
+/* Functional Layouts */
+.bot-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.bot-item {
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.bot-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bot-item.selected {
+    background: linear-gradient(90deg, rgba(122, 0, 255, 0.2), transparent);
+    border-left: 3px solid #7a00ff;
+    color: white;
+}
+
+.bot-item span {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Tabs */
+.command-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #aaa;
+    flex-grow: 1;
+    font-family: var(--font-main);
+    font-weight: 700;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.tab-btn.active {
+    background: linear-gradient(to right, #00ffd5, #7a00ff);
+    color: black;
+    box-shadow: 0 0 15px rgba(122, 0, 255, 0.5);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Controls */
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.input-row label {
+    font-size: 0.8rem;
+    color: #ccc;
+    min-width: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.control-section {
+    margin-bottom: 30px;
+}
+
+.control-section h3 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.d-pad-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.d-pad-grid .row {
+    display: flex;
+    gap: 5px;
+}
+
+.action-jump {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.coord-box {
+    width: 60px;
+    text-align: center;
+}
+
+.chat-input-row {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.prompt {
+    color: #00ffd5;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.chat-terminal {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    height: 250px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.chat-message .username {
+    background: linear-gradient(to right, #00ffd5, #7a00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.cyber-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "2nd-try-bot",
+  "version": "1.0.0",
+  "description": "A Minecraft bot with a Muslim-themed interface, designed to automate in-game tasks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Moiz",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "canvas": "^3.2.0",
+    "chalk": "latest",
+    "chalk-animation": "^2.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "figlet": "^1.9.3",
+    "minecraft-data": "latest",
+    "minecraft-server-util": "latest",
+    "mineflayer": "latest",
+    "mineflayer-auto-eat": "latest",
+    "mineflayer-pathfinder": "latest",
+    "mineflayer-pvp": "latest",
+    "mineflayer-tool": "^1.2.0",
+    "prismarine-viewer": "^1.33.0",
+    "readline-sync": "latest",
+    "socket.io": "^4.8.1",
+    "socks": "^2.8.7",
+    "socks-proxy-agent": "^8.0.5",
+    "vec3": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.5.1",
+    "globals": "^16.5.0"
+  }
+}
