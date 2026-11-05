@@ -1,9 +1,10 @@
 # 🤖 Minecraft Bot Controller
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen.svg?logo=node.js)](https://nodejs.org/)
 [![Mineflayer](https://img.shields.io/badge/Mineflayer-latest-blue.svg)](https://github.com/PrismarineJS/mineflayer)
 [![Express](https://img.shields.io/badge/Dashboard-Express-orange.svg)](https://expressjs.com/)
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Moiz-Genius/minecraft-bot-controller/pulls)
 
 A modular, high-performance Minecraft bot automation controller built with [Mineflayer](https://github.com/PrismarineJS/mineflayer). Control single or multiple bots concurrently with autonomous pathfinding, PvP combat, smart inventory management, an interactive web dashboard, and optional AI conversation routing.
